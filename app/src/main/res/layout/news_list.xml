@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data >
+        <variable
+            name="article"
+            type="com.example.nationalnews.Articles" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvMovie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:elevation="3dp"
+            card_view:cardCornerRadius="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/articleImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:scaleType="fitXY"
+                    bind:imgUrl="@{article.newsImage}" />
+
+                <TextView
+                    android:id="@+id/newsHeadline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/articleImage"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:paddingTop="10dp"
+                    android:text="@{article.newsTitle}"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</layout>
